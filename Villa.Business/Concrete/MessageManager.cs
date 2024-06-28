@@ -9,9 +9,9 @@ using Villa.Entity.Entities;
 
 namespace Villa.Business.Concrete
 {
-    public class MessageManeger : GenericManager<Message>, IMessageService
+    public class MessageManager : GenericManager<Message>, IMessageService
     {
-        public MessageManeger(IGenericDal<Message> genericDal) : base(genericDal)
+        public MessageManager(IGenericDal<Message> genericDal) : base(genericDal)
         {
         }
     }
