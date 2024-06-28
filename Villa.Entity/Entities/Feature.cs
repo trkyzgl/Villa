@@ -7,6 +7,5 @@
         public string SubTitle { get; set; }
         public string Square { get; set; }
         public string Safett { get; set; }
-
     }
 }

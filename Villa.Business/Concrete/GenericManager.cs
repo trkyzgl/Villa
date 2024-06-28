@@ -46,7 +46,7 @@ namespace Villa.Business.Concrete
 
         public async Task TUpdateAsync(T entity)
         {
-            return await _genericDal.UpdateAsync(entity);
+            await _genericDal.UpdateAsync(entity);
         }
     }
 }
