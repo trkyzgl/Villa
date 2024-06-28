@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
-using Villa.Business.Abstract;
-using Villa.Business.Concrete;
-using Villa.DataAccess.Abstract;
 using Villa.DataAccess.Context;
-using Villa.DataAccess.EntityFramework;
-using Villa.DataAccess.Repositories;
 using Villa.WebUI.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);

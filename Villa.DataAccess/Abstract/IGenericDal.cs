@@ -1,10 +1,5 @@
 ﻿using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Villa.DataAccess.Abstract
 {
@@ -17,6 +12,6 @@ namespace Villa.DataAccess.Abstract
 
         Task<T> GetByIdAsync(ObjectId id);
         Task<int> CountAsync();
-        Task<List<T>> GetFilteredListAsync(Expression<Func< T,bool>> predicate);
+        Task<List<T>> GetFilteredListAsync(Expression<Func<T, bool>> predicate);
     }
 }

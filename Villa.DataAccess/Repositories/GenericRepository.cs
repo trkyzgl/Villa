@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Villa.DataAccess.Abstract;
 using Villa.DataAccess.Context;
 
@@ -24,14 +19,14 @@ namespace Villa.DataAccess.Repositories
 
         public async Task<int> CountAsync()
         {
-            return await _context.Set<T>().CountAsync();    
+            return await _context.Set<T>().CountAsync();
             //throw new NotImplementedException();
         }
 
         public async Task CreateAsync(T entity)
         {
             await _context.AddAsync(entity);
-            await _context.SaveChangesAsync();  
+            await _context.SaveChangesAsync();
             //throw new NotImplementedException();
         }
 
@@ -45,7 +40,7 @@ namespace Villa.DataAccess.Repositories
 
         public async Task<T> GetByIdAsync(ObjectId id)
         {
-            return await _context.Set<T>().FindAsync(id);  
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public async Task<List<T>> GetFilteredListAsync(Expression<Func<T, bool>> predicate)
@@ -58,10 +53,10 @@ namespace Villa.DataAccess.Repositories
             return await _context.Set<T>().ToListAsync();
         }
 
-        public  async Task UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
-              _context.Set<T>().Update(entity);  
-            await _context.SaveChangesAsync();  
+            _context.Set<T>().Update(entity);
+            await _context.SaveChangesAsync();
         }
     }
 }

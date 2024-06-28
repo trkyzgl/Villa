@@ -1,10 +1,5 @@
 ﻿using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using Villa.Business.Abstract;
 using Villa.DataAccess.Abstract;
 
@@ -21,12 +16,12 @@ namespace Villa.Business.Concrete
 
         public async Task<int> TCountAsync()
         {
-            return await _genericDal.CountAsync();  
+            return await _genericDal.CountAsync();
         }
 
         public async Task TCreateAsync(T entity)
         {
-            await _genericDal.CreateAsync(entity);  
+            await _genericDal.CreateAsync(entity);
         }
 
         public async Task TDeleteAsync(ObjectId id)
@@ -41,12 +36,12 @@ namespace Villa.Business.Concrete
 
         public async Task<List<T>> TGetFilteredListAsync(Expression<Func<T, bool>> predicate)
         {
-            return await _genericDal.GetFilteredListAsync(predicate);    
+            return await _genericDal.GetFilteredListAsync(predicate);
         }
 
         public Task<List<T>> TGetListAsync()
         {
-            return _genericDal.GetListAsync();  
+            return _genericDal.GetListAsync();
         }
 
         public async Task TUpdateAsync(T entity)
