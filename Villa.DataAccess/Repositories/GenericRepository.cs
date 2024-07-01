@@ -32,8 +32,8 @@ namespace Villa.DataAccess.Repositories
 
         public async Task DeleteAsync(ObjectId id)
         {
-            var ent = GetByIdAsync(id);
-            _context.Remove(ent);
+            var value = await GetByIdAsync(id);
+            _context.Remove(value);
             await _context.SaveChangesAsync();
             //throw new NotImplementedException();
         }

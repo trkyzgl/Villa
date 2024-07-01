@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MongoDB.Driver;
+using System.Reflection;
 using Villa.DataAccess.Context;
 using Villa.WebUI.Extensions;
 
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 ///////
 
 builder.Services.AddServiceExtensions(); // Extensions klasoru içinde oluşturduğumuz ServiceExtensions class ının içindeki AddServiceExtensions(); methodun daki eklemeleri buraya tanımladık
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 var mongoDatabase = new MongoClient(builder.Configuration.GetConnectionString("MongoConnection")).GetDatabase(builder.Configuration.GetSection("DatabaseName").Value);// MongoDb yi tanımladık.
 
